@@ -103,18 +103,21 @@
                 status: "To do"
          }) 
         }
+        let index = 3
+
         console.log(pushTask)
         //funksjon som starter pushTask og printer ut et nytt listeelement med det du skrev i input når du trykker på lagreknappen
         function save(){
             console.log("function save aktivert")
             pushTask()
-            document.getElementById("todolist").value += 
+            index + 1
+            document.getElementById("todolist").innerHTML += 
                 `<li>
-                    <span class="tast-text">${todos[0].text}</span>
-                    <span class="task-status task-status-todo">${todos[0].status}</span>
+                    <span class="tast-text">${todos[index].text}</span>
+                    <span class="task-status task-status-todo">${todos[index].status}</span>
                 </li>`
         }
-
+        
         /*bytter ut hardkodet html med dynamiske verdier tatt fra arrayen todos. bruker template literal for å kombinere tekststrenger og kode. 
         bruker index for å velge ut fra arrayen - så velger man hvilken key man skal bruke siden det er objekter*/
        document.getElementById("todolist").innerHTML = 
