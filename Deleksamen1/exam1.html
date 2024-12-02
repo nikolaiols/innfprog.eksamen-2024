@@ -36,7 +36,7 @@
             };
 
             return input.split('').map(char => {
-                if (alphabetT.includes(char)) {
+                if (alphabet.includes(char)) { //syntaxfeil: var en for mye T, fjernet denne
                     return getPreviousChar(char, alphabet)
                 } else if (alphabetUpper.includes(char)) {
                     return getPreviousChar(char, alphabetUpper)
@@ -48,8 +48,8 @@
         //PRINT DECODED MATERIAL
         document.getElementById("heading").innerHTML = decode(code.hx)
         document.getElementById("intro").innerHTML = decode(code.ix)
-        document.getElementById("q1").innerhtml = decode(code.qx[0])
-        document.getElementByID("q2").innerHTML = decode(code.qx[1])
+        document.getElementById("q1").innerHTML = decode(code.qx[0])//syntaxfeil: småe bokstaver i innerhtml, byttet til inerHTML
+        document.getElementById("q2").innerHTML = decode(code.qx[1])//syntaxfeil: stor D i Id, endret til liten d
         document.getElementById("q3").innerHTML = decode(code.qx[2]) // manglet klammeparantes, la til en klammeparantes bak 2 tallet
         document.getElementById("delivery").innerHTML = decode(code.dx)
     </script>
