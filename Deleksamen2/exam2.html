@@ -63,10 +63,11 @@
 
         let contactlist = ""
 
+        /*legger inn en <a href="mailto:${contact.mail}"> for å gjøre det mulig å trykke på linken.*/
         contacts.map((contact, index) => {
             contactlist += `<article>
                 <p><strong>${contact.lastname}, ${contact.firstname}</strong><br />
-                    Kontor: ${contact.office} | E-post: ${contact.mail}</p>
+                    Kontor: ${contact.office} | <a href="mailto:${contact.mail}">${contact.mail}</a></p>
             </article>`
         })
 
@@ -95,7 +96,7 @@
             {text: "Lag funksjonalitet for å sette en eksisterende oppgave til utført ved å endre status", status: "To do"}
         ]
 
-        /*bytter ut hardkodet html med dynamiske verdier tatt fra arrayen todos. bruker konkastinenring for å kombinere tekststrenger og kode. 
+        /*bytter ut hardkodet html med dynamiske verdier tatt fra arrayen todos. bruker template literal for å kombinere tekststrenger og kode. 
         bruker index for å velge ut fra arrayen - så velger man hvilken key man skal bruke siden det er objekter*/
        document.getElementById("todolist").innerHTML = 
                 `<li>
