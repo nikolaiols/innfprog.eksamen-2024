@@ -95,6 +95,8 @@
             {text: "Lag funksjonalitet for å sette en eksisterende oppgave til utført ved å endre status", status: "To do"}
         ]
 
+        /*bytter ut hardkodet html med dynamiske verdier tatt fra arrayen todos. bruker konkastinenring for å kombinere tekststrenger og kode. 
+        bruker index for å velge ut fra arrayen - så velger man hvilken key man skal bruke siden det er objekter*/
        document.getElementById("todolist").innerHTML = 
                 `<li>
                     <span class="tast-text">${todos[0].text}</span>
@@ -103,7 +105,8 @@
                 <li>
                     <span class="tast-text">${todos[1].text}</span>
                     <span class="task-status task-status-todo">${todos[1].status}</span>
-                </li>`
+                </li>
+                `
         
         //CLOCK
         
