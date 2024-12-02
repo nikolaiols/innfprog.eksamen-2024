@@ -39,7 +39,7 @@
             <ul id="todolist">
                 <!-- De to listeelementene skal byttes ut med utskrift av data fra programkoden i <script> -->
                 <li>
-                    <span class="tast-text">Les eksamensteksten</span>
+                    <span class="tast-text">0</span>
                     <span class="task-status task-status-done">Done</span>
                 </li>
                 <li>
@@ -95,6 +95,15 @@
             {text: "Lag funksjonalitet for å sette en eksisterende oppgave til utført ved å endre status", status: "To do"}
         ]
 
+       document.getElementById("todolist").innerHTML = 
+                `<li>
+                    <span class="tast-text">${todos[0].text}</span>
+                    <span class="task-status task-status-done">${todos[0].status}</span>
+                </li>
+                <li>
+                    <span class="tast-text">${todos[1].text}</span>
+                    <span class="task-status task-status-todo">${todos[1].status}</span>
+                </li>`
         
         //CLOCK
         
