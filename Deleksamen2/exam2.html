@@ -32,7 +32,7 @@
         </section>
         <section id="todoform">
             <h2>Ny oppgave</h2>
-            <p><label for="task">Oppgavetekst:</label><br /><input type="text" id="task" /><button id="savetask">Lagre</button></p>
+            <p><label for="task">Oppgavetekst:</label><br /><input type="text" id="task" /><button id="savetask" onclick="save()">Lagre</button></p>
         </section>
         <section id="todos">
             <h2>Oppgaver</h2>
@@ -89,12 +89,27 @@
 
 
         //TODOS
-        const todos = [
+        let todos = [
             {text: "Les eksamensteksten", status: "Done"},
             {text: "Løs Innføring i programmerings-eksamen", status: "To do"},
             {text: "Lag funksjonalitet for å registrere nye oppgaver", status: "To do"},
             {text: "Lag funksjonalitet for å sette en eksisterende oppgave til utført ved å endre status", status: "To do"}
         ]
+        console.log(todos)
+
+        function pushTask(){
+            todos.push(`"{text: ${document.getElementById("task").innerHTML}", status: "To do"}`)
+        }
+        console.log(pushTask)
+        function save(){
+            console.log("function save aktivert")
+            pushTask()
+            document.getElementById("todolist").innerHTML += 
+                `<li>
+                    <span class="tast-text">${todos[0].text}</span>
+                    <span class="task-status task-status-todo">${todos[0].status}</span>
+                </li>`
+        }
 
         /*bytter ut hardkodet html med dynamiske verdier tatt fra arrayen todos. bruker template literal for å kombinere tekststrenger og kode. 
         bruker index for å velge ut fra arrayen - så velger man hvilken key man skal bruke siden det er objekter*/
