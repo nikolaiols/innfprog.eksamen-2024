@@ -124,12 +124,15 @@
                 status: "To do"
          }) 
         }
-        //en variabel med indextall.
-        let index = 3
 
-       
-        //funksjonen starter pushTask og printer ut et nytt listeelement med det du skrev i input når du trykker på lagreknappen
+        
+        //funksjonen starter pushTask og printer ut et nytt listeelement med det du skrev i input når du trykker på lagreknappen          
+        let index = 3   //en variabel med indextall  
         function save(){
+            if(document.getElementById("task").value === ""){ //sjekker om feltet er tomt, hvis det er tomt kommer alerten opp og du får ikke lagd et nytt gjøremål
+                alert("Du kan ikke lage et gjøremål uten noen tekst.");
+            return;}
+            else{
             console.log("function save aktivert")
             pushTask()
             index += 1
@@ -138,6 +141,8 @@
                     <span class="tast-text">${todos[index].text}</span>
                     <span class="task-status task-status-todo">${todos[index].status}</span>
                 </li>`
+            }
+
         }
         console.log(pushTask)
         
