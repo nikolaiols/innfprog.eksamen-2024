@@ -63,8 +63,8 @@
 
         let contactlist = ""
 
-        /*sorterer arrayen fra a-å basert på etternavn. koden sammenligner objektene og skriver de ut i riktig rekkefølge bassert på parameteret i sort, a og b*/
-        /*koden er tatt fra linken under, men endret på og lagt til en .lastname for å velge object-key: lastname, da det er denne som skal sorteres ut ifra*/
+        /*sorterer arrayen fra a-å basert på etternavn. koden sammenligner objekt-keyene lastname og skriver de ut i riktig rekkefølge bassert på parameteret i sort, a og b*/
+        /*koden er tatt fra linken under, men endret på og lagt til ".lastname" for å velge object-key: lastname, da det er denne som skal sorteres ut ifra*/
         /*https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort*/
         contacts.sort((a, b) => a.lastname.localeCompare(b.lastname));
 
