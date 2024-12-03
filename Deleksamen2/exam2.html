@@ -93,40 +93,22 @@
         let balance = 0;    //Startbalanse for utregning av utgifter og inntekter i november
 
 
-        document.getElementById("booklines").innerHTML = 
-                `<div class="bookline">
-                    <span class="booktext">${books[0].text}</span>
-                    <span class="bookdate">${books[0].date}</span>
-                    <span class="bookamount">${books[0].amount}</span>
-                </div>
-                <div class="bookline">
-                    <span class="booktext">${books[1].text}</span>
-                    <span class="bookdate">${books[1].date}</span>
-                    <span class="bookamount">${books[1].amount}</span>
-                </div>
-                <div class="bookline">
-                    <span class="booktext">${books[2].text}</span>
-                    <span class="bookdate">${books[2].date}</span>
-                    <span class="bookamount">${books[2].amount}</span>
-                </div>
-                 <div class="bookline">
-                    <span class="booktext">${books[3].text}</span>
-                    <span class="bookdate">${books[3].date}</span>
-                    <span class="bookamount">${books[3].amount}</span>
-                </div>
-                <div class="bookline">
-                    <span class="booktext">${books[4].text}</span>
-                    <span class="bookdate">${books[4].date}</span>
-                    <span class="bookamount">${books[4].amount}</span>
-                </div>
-                <div class="bookline">
-                    <span class="booktext">${books[5].text}</span>
-                    <span class="bookdate">${books[5].date}</span>
-                    <span class="bookamount">${books[5].amount}</span>
-                </div>
-                `
-
-
+         /*bruker en whileløkke for å slippe å skrive en ny seksjon for hver nye kvittering, og gjør det enklere for eventuell ekspandering av arrayen.
+         whileløkken sjekker om whiletelleren er mindre lengden på arrayen og at lengden på arrayen er større enn booksIndex. så lenge disse kravene er fyllt
+         printer den ut en ny kvittering til neste punkt i arrayen.*/
+        let booksIndex = 0
+        let whileteller = 0
+        while(whileteller <= books.length && books.length > booksIndex) {
+            document.getElementById("booklines").innerHTML += 
+                    `<div class="bookline">
+                        <span class="booktext">${books[booksIndex].text}</span>
+                        <span class="bookdate">${books[booksIndex].date}</span>
+                        <span class="bookamount">${books[booksIndex].amount}</span>
+                    </div>`
+            whileteller++
+            booksIndex ++ 
+        }
+        
         //TODOS
         let todos = [
             {text: "Les eksamensteksten", status: "Done"},
