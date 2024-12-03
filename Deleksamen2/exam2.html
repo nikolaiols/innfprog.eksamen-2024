@@ -19,7 +19,7 @@
             <section id="book">
                 <h3>Bokføring, november</h3>
                 <div id="bookhead" class="bookline">
-                    <span class="booktext">Kvittering</span>
+                    <span class="booktext" >Kvittering</span>
                     <span class="bookdate">Dato</span>
                     <span class="bookamount">Sum</span>
                 </div>
@@ -91,6 +91,40 @@
         let equity = 23782; //Penger på konto ved inngangen til november
         document.getElementById("incomingequity").innerHTML = equity
         let balance = 0;    //Startbalanse for utregning av utgifter og inntekter i november
+
+
+        document.getElementById("booklines").innerHTML = 
+                `<div class="bookline">
+                    <span class="booktext">${books[0].text}</span>
+                    <span class="bookdate">${books[0].date}</span>
+                    <span class="bookamount">${books[0].amount}</span>
+                </div>
+                <div class="bookline">
+                    <span class="booktext">${books[1].text}</span>
+                    <span class="bookdate">${books[1].date}</span>
+                    <span class="bookamount">${books[1].amount}</span>
+                </div>
+                <div class="bookline">
+                    <span class="booktext">${books[2].text}</span>
+                    <span class="bookdate">${books[2].date}</span>
+                    <span class="bookamount">${books[2].amount}</span>
+                </div>
+                 <div class="bookline">
+                    <span class="booktext">${books[3].text}</span>
+                    <span class="bookdate">${books[3].date}</span>
+                    <span class="bookamount">${books[3].amount}</span>
+                </div>
+                <div class="bookline">
+                    <span class="booktext">${books[4].text}</span>
+                    <span class="bookdate">${books[4].date}</span>
+                    <span class="bookamount">${books[4].amount}</span>
+                </div>
+                <div class="bookline">
+                    <span class="booktext">${books[5].text}</span>
+                    <span class="bookdate">${books[5].date}</span>
+                    <span class="bookamount">${books[5].amount}</span>
+                </div>
+                `
 
 
         //TODOS
