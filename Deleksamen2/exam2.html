@@ -117,7 +117,7 @@
             {text: "Lag funksjonalitet for å sette en eksisterende oppgave til utført ved å endre status", status: "To do"}
         ]
         console.log(todos)
-        
+
         //lager en funksjon som tar teksten fra input og lager et nytt objekt med teksten og plasserer den i arrayen todos
         function pushTask(){
             todos.push(
@@ -128,7 +128,7 @@
 
         
         //funksjonen starter pushTask og printer ut et nytt listeelement med det du skrev i input når du trykker på lagreknappen          
-        let index = 3   //en variabel med indextall  
+        let index = 3   //en variabel med indextall
         function save(){
             if(document.getElementById("task").value === ""){ //sjekker om feltet er tomt, hvis det er tomt kommer alerten opp og du får ikke lagd et nytt gjøremål
                 alert("Du kan ikke lage et gjøremål uten noen tekst.");
