@@ -52,23 +52,23 @@
             const characters = '0123456789abcdf';
             const charactersLength = characters.length;
             let teller = 0;
-            if(farger.length <= 9){
             while (teller < length) {
             result += characters.charAt(Math.floor(Math.random() * charactersLength));
             teller += 1;
             }
             return result;
-        }else{
-            alert("du kan ha max 10 farger");
-        }
         }
         //koden aktiverer hexageneratoren og pusher den randomiserte hexakoden inn i den tomme arrayen når man trykker på knappen. 
         /*jeg bruker en eventlistener på knappen (click) for å utføre arrowfunksjonen
         arrowfunksjonen pusher resultatet som er lagret i variabelen hexacode til arrayen ved bruk av push()*/
         document.getElementById("addColor").addEventListener("click", ()=>{
+           if(farger.length < 10){
             console.log("knapp starter funksjon")
             let hexacode = hexaGenerator(6)
             farger.push(hexacode)
+           } else{
+            alert("Du kan max ha 10 farger")
+           }
         })
 
         console.log(farger)
