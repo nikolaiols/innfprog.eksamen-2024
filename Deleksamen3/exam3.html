@@ -42,7 +42,7 @@
 
         /* --- YOUR FUNCTIONALITY AND CODE GOES HERE --- */
         /*lager en tom array som skal fylles med farger*/
-        let fargeArray = []
+        let farger = []
 
 
         // kode tatt fra https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
@@ -58,14 +58,16 @@
             }
             return result;
         }
-
+        //koden aktiverer hexageneratoren og pusher den randomiserte hexakoden inn i den tomme arrayen når man trykker på knappen. 
+        /*jeg bruker en eventlistener på knappen (click) for å utføre arrowfunksjonen
+        arrowfunksjonen pusher resultatet som er lagret i variabelen hexacode til arrayen ved bruk av push()*/
         document.getElementById("addColor").addEventListener("click", ()=>{
             console.log("knapp starter funksjon")
-            hexaGenerator(6)
-            fargeArray.push("lagt inn i array")
-            console.log(hexaGenerator(6));
+            let hexacode = hexaGenerator(6)
+            farger.push(hexacode)
         })
-        console.log(fargeArray)
+
+        console.log(farger)
         //requestAnimationFrame
         const requestAnimationFrame = window.requestAnimationFrame || window.msRequestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame
         function renderCanvas() {
