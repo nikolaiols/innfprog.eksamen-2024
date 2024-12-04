@@ -41,8 +41,30 @@
         const ctx = canvas.getContext("2d")
 
         /* --- YOUR FUNCTIONALITY AND CODE GOES HERE --- */
-        
+        let fargeArray = []
 
+
+        // kode tatt fra https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+        /*koden er endret slik at den velger tegn fra a-f og/eller 1-9. og setter en # forran. det er også endret noen variabelnavn som gjør den mer gjennkjennelig for meg.*/
+        function hexaGenerator(length) {
+            let result = '#';
+            const characters = '0123456789abcdf';
+            const charactersLength = characters.length;
+            let teller = 0;
+            while (teller < length) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            teller += 1;
+            }
+            return result;
+        }
+
+        document.getElementById("addColor").addEventListener("click", ()=>{
+            console.log("knapp starter funksjon")
+            hexaGenerator(6)
+            fargeArray.push("lagt inn i array")
+            console.log(hexaGenerator(6));
+        })
+        console.log(fargeArray)
         //requestAnimationFrame
         const requestAnimationFrame = window.requestAnimationFrame || window.msRequestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame
         function renderCanvas() {
