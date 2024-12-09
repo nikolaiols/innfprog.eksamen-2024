@@ -68,7 +68,7 @@
             farger.push(hexacode)
            
             let square = {
-                x: farger.length * 100,
+                x: (farger.length - 1) * 100,
                 y: 0,
                 w: 100,
                 h: 100,
@@ -80,7 +80,6 @@
             ctx.fillStyle = square.color
             ctx.fill()
             ctx.closePath()
-            
            } else{
             alert("Du kan max ha 10 farger")
            }
