@@ -83,14 +83,24 @@
                 y: 0,
                 w: 100,
                 h: 100,
-                color: farger[farger.length - 1]//tar første farge fra arrayen, bruker minus 1 siden indexen starter på 0.
+                color: farger[farger.length - 1],//tar første farge fra arrayen, bruker minus 1 siden indexen starter på 0.
+                tall: "1",
+                fargetext: "",
             }
-            
+            //fargefirkant:
             ctx.beginPath()
             ctx.rect(square.x, square.y, square.w, square.h)
             ctx.fillStyle = square.color
             ctx.fill()
             ctx.closePath()
+
+            //bakrunnsfarge talltext:
+            ctx.beginPath()
+            ctx.rect(square.x + square.w - 20, 80, 20, 20)
+            ctx.fillStyle = "#fff"
+            ctx.fill()
+            ctx.closePath()
+
             requestAnimationFrame(renderCanvas)//rekursivt kall
         }
 
