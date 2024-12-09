@@ -101,6 +101,13 @@
             ctx.fill()
             ctx.closePath()
 
+             //bakrunnsfarge fargetext:
+            ctx.beginPath()
+            ctx.rect(square.x + square.w -100, 0, 70, 20)
+            ctx.fillStyle = "#fff"
+            ctx.fill()
+            ctx.closePath()
+
             requestAnimationFrame(renderCanvas)//rekursivt kall
         }
 
