@@ -66,20 +66,6 @@
             console.log("knapp starter funksjon")
             let hexacode = hexaGenerator(6)
             farger.push(hexacode)
-           
-            /*let square = {
-                x: (farger.length - 1) * 100,
-                y: 0,
-                w: 100,
-                h: 100,
-                color: farger[farger.length - 1]
-            }
-            
-            ctx.beginPath()
-            ctx.rect(square.x, square.y, square.w, square.h)
-            ctx.fillStyle = square.color
-            ctx.fill()
-            ctx.closePath()*/
            } else{
             alert("Du kan max ha 10 farger")
            }
@@ -88,14 +74,16 @@
         console.log(farger)
         //requestAnimationFrame
         const requestAnimationFrame = window.requestAnimationFrame || window.msRequestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame
+          /*tegner kontinuerlig opp firkantene*/
         function renderCanvas() {
             ctx.clearRect(0,0, ctx.w, ctx.h)
             let square = {
-                x: (farger.length - 1) * 100,
+                x: (farger.length - 1) * 100, /*ganger indexen til arrayen med 100 slik at fargen tegnes ut på neste 100px.
+                arrayen plusses på 1 for hver farge som blir dyttet inn og regnestykket går opp 1 i "farger.length"*/
                 y: 0,
                 w: 100,
                 h: 100,
-                color: farger[farger.length - 1]
+                color: farger[farger.length - 1]//tar første farge fra arrayen, bruker minus 1 siden indexen starter på 0.
             }
             
             ctx.beginPath()
@@ -103,7 +91,7 @@
             ctx.fillStyle = square.color
             ctx.fill()
             ctx.closePath()
-            requestAnimationFrame(renderCanvas)
+            requestAnimationFrame(renderCanvas)//rekursivt kall
         }
 
         //Initial running of drawing canvas
