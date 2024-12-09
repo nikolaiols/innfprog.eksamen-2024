@@ -73,13 +73,33 @@
         })
         //viser arrayen i console
         console.log(farger)
-        
+
+        //TØM 
         //fjerner allt i arrayen ved å sette length til 0. og så tømmer jeg canvas ved hjelp av clearRect
         document.getElementById("emptyArray").addEventListener("click", () => {
         farger.length = 0;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
        
+        //TI FARGER
+        /*lager 10 nye farger og tegner de opp i canvas når man trykker på "generer ti nye farger."*/
+        document.getElementById("generateAll").addEventListener("click", () => {
+        console.log("ti farger")
+        teller = 0
+        /*her bruker jeg samme kode som jeg bruker når jeg skriver ut enkelt farger. men den er satt inn i en while løkke som lar meg kjøre funksjonen 10 ganger*/
+        while(teller <= 9){
+            if(farger.length <= 9){
+            let hexacode = hexaGenerator(6)
+            farger.push(hexacode)
+            }else{
+                alert("Du kan max ha 10 farger")
+                return;
+            }
+            renderCanvas()
+            teller ++ //plusser på teller frem til betingelsen ikke stemmer lenger og da stopper løkken (går over på else).
+        }
+        });
+
         //requestAnimationFrame
         const requestAnimationFrame = window.requestAnimationFrame || window.msRequestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame
           /*tegner kontinuerlig opp firkantene*/
