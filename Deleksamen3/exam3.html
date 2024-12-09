@@ -84,7 +84,7 @@
                 w: 100,
                 h: 100,
                 color: farger[farger.length - 1],//tar første farge fra arrayen, bruker minus 1 siden indexen starter på 0.
-                fargetext: farger[farger.length -1],
+                
             }
             //fargefirkant:
             ctx.beginPath()
@@ -110,9 +110,16 @@
             //talltext
             ctx.beginPath()
             ctx.font = "12px sans-serif"
-            ctx.fillStyle = square.fargetext
+            ctx.fillStyle = square.color
             ctx.fillText(farger.length, square.x + square.w - 15 , 95)
             ctx.closePath()
+
+            ctx.beginPath()
+            ctx.font = "12px sans-serif"
+            ctx.fillStyle = "#000"
+            ctx.fillText(square.color, square.x + square.w -90 , 15)
+            ctx.closePath()
+
 
             requestAnimationFrame(renderCanvas)//rekursivt kall
         }
