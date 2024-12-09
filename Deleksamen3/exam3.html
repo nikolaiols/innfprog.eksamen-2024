@@ -67,6 +67,29 @@
             let hexacode = hexaGenerator(6)
             farger.push(hexacode)
            
+            /*let square = {
+                x: (farger.length - 1) * 100,
+                y: 0,
+                w: 100,
+                h: 100,
+                color: farger[farger.length - 1]
+            }
+            
+            ctx.beginPath()
+            ctx.rect(square.x, square.y, square.w, square.h)
+            ctx.fillStyle = square.color
+            ctx.fill()
+            ctx.closePath()*/
+           } else{
+            alert("Du kan max ha 10 farger")
+           }
+        })
+        //viser arrayen i console
+        console.log(farger)
+        //requestAnimationFrame
+        const requestAnimationFrame = window.requestAnimationFrame || window.msRequestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame
+        function renderCanvas() {
+            ctx.clearRect(0,0, ctx.w, ctx.h)
             let square = {
                 x: (farger.length - 1) * 100,
                 y: 0,
@@ -80,16 +103,6 @@
             ctx.fillStyle = square.color
             ctx.fill()
             ctx.closePath()
-           } else{
-            alert("Du kan max ha 10 farger")
-           }
-        })
-        //viser arrayen i console
-        console.log(farger)
-        //requestAnimationFrame
-        const requestAnimationFrame = window.requestAnimationFrame || window.msRequestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame
-        function renderCanvas() {
-            
             requestAnimationFrame(renderCanvas)
         }
 
