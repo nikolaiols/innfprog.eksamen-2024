@@ -73,8 +73,13 @@
         })
         //viser arrayen i console
         console.log(farger)
-
-
+        
+        //fjerner allt i arrayen ved å sette length til 0. og så tømmer jeg canvas ved hjelp av clearRect
+        document.getElementById("emptyArray").addEventListener("click", () => {
+        farger.length = 0;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+       
         //requestAnimationFrame
         const requestAnimationFrame = window.requestAnimationFrame || window.msRequestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame
           /*tegner kontinuerlig opp firkantene*/
