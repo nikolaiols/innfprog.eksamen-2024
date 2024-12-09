@@ -80,24 +80,22 @@
         farger.length = 0;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
-       
+      
         //TI FARGER
         /*lager 10 nye farger og tegner de opp i canvas når man trykker på "generer ti nye farger."*/
         document.getElementById("generateAll").addEventListener("click", () => {
         console.log("ti farger")
         teller = 0
-        /*her bruker jeg samme kode som jeg bruker når jeg skriver ut enkelt farger. men den er satt inn i en while løkke som lar meg kjøre funksjonen 10 ganger*/
+        /* her tegner jeg opp ti farger ved hjelp av en whileløkke*/
+       if(farger.length > 0){farger.length = 0} 
+        
         while(teller <= 9){
-            if(farger.length <= 9){
             let hexacode = hexaGenerator(6)
             farger.push(hexacode)
-            }else{
-                alert("Du kan max ha 10 farger")
-                return;
-            }
+            teller ++ //plusser på teller frem til betingelsen ikke stemmer lenger og da stopper løkken.
             renderCanvas()
-            teller ++ //plusser på teller frem til betingelsen ikke stemmer lenger og da stopper løkken (går over på else).
         }
+    
         });
 
         //requestAnimationFrame
