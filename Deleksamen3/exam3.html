@@ -79,6 +79,22 @@
             requestAnimationFrame(renderCanvas)
         }
         
+        
+        let square = {
+            x: 0,
+            y: 0,
+            w: 100,
+            h: 100,
+            color: farger[0]
+        }
+        
+        ctx.beginPath()
+        ctx.rect(square.x, square.y, square.w, square.h)
+        ctx.fillStyle = square.color
+        ctx.fill()
+        ctx.closePath()
+
+
         //Initial running of drawing canvas
         renderCanvas()
     </script>
