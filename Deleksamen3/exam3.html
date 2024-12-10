@@ -58,7 +58,12 @@
             }
             return result;
         }
-        
+        //funksjone som sjekker om det er 10 farger i arrayen og enten disabler knappen hvis det er sant eller enabler knappen hvis det ikke er sant
+        function btnDisabled(){
+            if(farger.length >= 10){
+            document.getElementById("addColor").disabled = true
+            }else{document.getElementById("addColor").disabled = false}
+        }
        
         //koden aktiverer hexageneratoren og pusher den randomiserte hexakoden inn i den tomme arrayen når man trykker på knappen. 
         /*jeg bruker en eventlistener på knappen (click) for å utføre arrowfunksjonen
@@ -68,6 +73,7 @@
             console.log("knapp starter funksjon")
             let hexacode = hexaGenerator(6)
             farger.push(hexacode)
+            btnDisabled()
            }else{
             alert("Du kan max ha 10 farger")
            }
@@ -80,6 +86,7 @@
         //fjerner allt i arrayen ved å sette length til 0. og så tømmer jeg canvas ved hjelp av clearRect
         document.getElementById("emptyArray").addEventListener("click", () => {
         farger.length = 0;
+        btnDisabled()
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
         //TI FARGER
@@ -87,15 +94,15 @@
         document.getElementById("generateAll").addEventListener("click", () => {
         console.log("ti farger")
         teller = 0
+        if(farger.length > 0){farger.length = 0} 
         /* her tegner jeg opp ti farger ved hjelp av en whileløkke*/
-       if(farger.length > 0){farger.length = 0} 
-        
-        while(teller <= 9){
+       while(teller <= 9){
             let hexacode = hexaGenerator(6)
             farger.push(hexacode)
             teller ++ //plusser på teller frem til betingelsen ikke stemmer lenger og da stopper løkken.
             renderCanvas()
         }
+        btnDisabled()
     
         });
 
