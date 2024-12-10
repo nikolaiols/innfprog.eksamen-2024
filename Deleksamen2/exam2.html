@@ -109,6 +109,16 @@
             booksIndex ++ 
         }
 
+        
+           let teller = 0 
+           let booksIndex2 = 0 
+           while(teller <= books.length && books.length > booksIndex2) {
+            document.getElementById("balance").innerHTML = books[booksIndex2].amount
+            teller++
+            booksIndex2++
+            }
+        
+
         //TODOS
         let todos = [
             {text: "Les eksamensteksten", status: "Done"},
