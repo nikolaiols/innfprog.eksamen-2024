@@ -59,6 +59,7 @@
             return result;
         }
         
+       
         //koden aktiverer hexageneratoren og pusher den randomiserte hexakoden inn i den tomme arrayen når man trykker på knappen. 
         /*jeg bruker en eventlistener på knappen (click) for å utføre arrowfunksjonen
         arrowfunksjonen pusher resultatet som er lagret i variabelen hexacode til arrayen ved bruk av push()*/
@@ -67,10 +68,11 @@
             console.log("knapp starter funksjon")
             let hexacode = hexaGenerator(6)
             farger.push(hexacode)
-           } else{
+           }else{
             alert("Du kan max ha 10 farger")
            }
         })
+
         //viser arrayen i console
         console.log(farger)
 
@@ -80,7 +82,6 @@
         farger.length = 0;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
-      
         //TI FARGER
         /*lager 10 nye farger og tegner de opp i canvas når man trykker på "generer ti nye farger."*/
         document.getElementById("generateAll").addEventListener("click", () => {
