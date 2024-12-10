@@ -119,9 +119,12 @@
         teller++
         booksIndex2++
         }
-        //skriver ut summen av regnestykket til balansen
+        //skriver balansen
         document.getElementById("balance").innerHTML = sum
         
+        //plusser sammen innkomende egenkappital og balansen og skriver ut dette i "equity"
+        let egenkap = equity + sum
+        document.getElementById("equity").innerHTML = egenkap
 
         //TODOS
         let todos = [
@@ -159,7 +162,7 @@
             }
 
         }
-        console.log(pushTask)
+        
         
         /*bytter ut hardkodet html med dynamiske verdier tatt fra arrayen todos. bruker template literal for å kombinere tekststrenger og kode. 
         bruker index for å velge ut fra arrayen - så velger man hvilken key man skal bruke siden det er objekter*/
