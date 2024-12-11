@@ -177,6 +177,17 @@
                 </li>
                 `
         
+        //legger til en eventlistener på om noen trykker på todolist. så sjekker den om elementet har klassen "task-status-todo".
+        //hvis den har dette bytter den teksten til done, og endrer status til done. (css er allerede lagd for denne klassen så den blir automatisk grønn)
+        //informasjon om "classlist" er funnet på https://www.w3schools.com/jsref/met_domtokenlist_contains.asp
+        document.getElementById("todolist").addEventListener("click", (event)=>{
+            if(event.target.classList.contains("task-status-todo")){
+                console.log("jeg funker")
+                event.target.textContent = "Done";
+                event.target.classList.remove("task-status-todo");
+                event.target.classList.add("task-status-done");
+            }
+        })
         //CLOCK
         /*kode er tatt fra https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock det er byttet ut noen navn så den er enklere for meg å forstå*/
         /*koden definerer tre varibler. og bruker today.get som er en innebygd funksjon i javascript som får tak i informasjon om tid, i dette tilfellet
